@@ -1,11 +1,17 @@
 <?php
 include 'db.php';
 
+/*if (!isset($_SESSION['login'])) {
+    header("Location: /belepes");
+    exit;
+}*/
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (isset($_FILES['image']) && $_FILES['image']['error'] === 0) {
 
-        $targetDir = "uploads/";
+        $targetDir = "../images/uploads/";
 
         if (!is_dir($targetDir)) {
             mkdir($targetDir, 0777, true);
@@ -19,19 +25,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (in_array($ext, $allowed)) {
 
-            if (move_uploaded_file($_FILES['image']['tmp_name'], $targetFile)) {
+            try {
+                move_uploaded_file($_FILES['image']['tmp_name'], $targetFile);
 
                 $stmt = $conn->prepare("INSERT INTO images (filename) VALUES (?)");
-                $stmt->bind_param("s", $fileName);
-                $stmt->execute();
+                $stmt->execute([$fileName]);
 
-                header("Location: gallery.php");
+                header("Location: /gallery");
                 exit;
 
-            } else {
-                die("Feltöltési hiba");
             }
-
+            catch(PDOException $e){
+                die($e->getMessage());
+            }
         } else {
             die("Nem engedélyezett fájl");
         }

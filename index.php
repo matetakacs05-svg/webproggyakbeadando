@@ -11,5 +11,5 @@
 		}
 	}
 	else $keres = $oldalak['/'];
-	include('./templates/index.tpl.php'); 
+	include('./templates/index.tpl.php');
 ?>
