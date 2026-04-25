@@ -1,3 +1,4 @@
+<?php require "includes/db.php"; ?>
 <h2>Adatok:</h2>
 <p>Ügyvezető: <strong>Valaki Az</strong></p>
 <p>E-mail: <strong>valaki.az@minihonlap.hu</strong></p>
@@ -11,3 +12,28 @@
 <br>
 <a target="_blank" href="https://www.google.hu/maps/place/Pallasz+Ath%C3%A9n%C3%A9+Egyetem+GAMF+Kar/@46.8960799,19.6669509,17z/data=!3m1!4b1!4m5!3m4!1s0x4743da7a6c479e1d:0xc8292b3f6dc69e7f!8m2!3d46.8960763!4d19.6691396?hl=hu">Nagyobb térkép</a>
 <?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    if (!isset($_SESSION['login'])) {
+        echo "Hiba: nem vagy bejelentkezve.";
+    } elseif (!isset($_POST['szoveg']) || trim($_POST['szoveg']) === '') {
+        echo "Hiba: hiányzó szöveg.";
+    } else {
+        $szoveg = trim($_POST['szoveg']);
+        $felhasznalo = $_SESSION['login'];
+        $ido = date('Y-m-d H:i:s');
+
+        $sql = "INSERT INTO uzenetek (felhasznalonev, szoveg, ido)
+                VALUES (:felhasznalo, :szoveg, :ido)";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([
+            ':felhasznalo' => $felhasznalo,
+            ':szoveg' => $szoveg,
+            ':ido' => $ido
+        ]);
+        header("Location: " . $_SERVER['REQUEST_URI']);
+        exit;  
+    }
+} 
+?>
