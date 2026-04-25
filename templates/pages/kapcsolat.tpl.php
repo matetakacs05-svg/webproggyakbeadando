@@ -14,13 +14,16 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    if (!isset($_SESSION['login'])) {
-        echo "Hiba: nem vagy bejelentkezve.";
-    } elseif (!isset($_POST['szoveg']) || trim($_POST['szoveg']) === '') {
+    if (!isset($_POST['szoveg']) || trim($_POST['szoveg']) === '') {
         echo "Hiba: hiányzó szöveg.";
     } else {
         $szoveg = trim($_POST['szoveg']);
+        if (!isset($_SESSION['login'])) {
+            $felhasznalo = "Vendég";
+        }
+        else{
         $felhasznalo = $_SESSION['login'];
+        }
         $ido = date('Y-m-d H:i:s');
 
         $sql = "INSERT INTO uzenetek (felhasznalonev, szoveg, ido)
