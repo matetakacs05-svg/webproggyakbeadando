@@ -25,19 +25,21 @@
 
     <h2>Galéria</h2>
 
+<div class="gallery-wrapper">
     <?php
-    try {
-        $sql = $conn->prepare('SELECT * FROM images');
-        $sql->execute();
-        $results = $sql->fetchAll();
+        try {
+            $sql = $conn->prepare('SELECT * FROM images');
+            $sql->execute();
+            $results = $sql->fetchAll();
 
-        foreach ($results as $row) {
-            echo "<img src='/images/uploads/" . $row['filename'] . "' alt='" . $row['filename'] . "'>";
+            foreach ($results as $row) {
+                echo "<img src='/images/uploads/" . $row['filename'] . "' alt='" . $row['filename'] . "'>";
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
         }
-    } catch (PDOException $e) {
-        echo $e->getMessage();
-    }
     ?>
+</div>
 </div>
 </body>
 </html>
