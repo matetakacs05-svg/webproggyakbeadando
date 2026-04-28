@@ -16,20 +16,16 @@
 		<?php if(isset($_SESSION['login'])) { ?>Bejlentkezve: <strong><?= $_SESSION['csn']." ".$_SESSION['un']." (".$_SESSION['login'].")" ?></strong><?php } ?>
 	</header>
     <div id="wrapper">
-        <aside id="nav">
-            <nav>
-                <ul>
-					<?php foreach ($oldalak as $url => $oldal) { ?>
-						<?php if(! isset($_SESSION['login']) && $oldal['menun'][0] || isset($_SESSION['login']) && $oldal['menun'][1]) { ?>
-							<li<?= (($oldal == $keres) ? ' class="active"' : '') ?>>
-							<a href="<?= ($url == '/') ? '.' : $url ?>">
-							<?= $oldal['szoveg'] ?></a>
-							</li>
-						<?php } ?>
-					<?php } ?>
-                </ul>
-            </nav>
-        </aside>
+        <nav class="nav">
+			<?php foreach ($oldalak as $url => $oldal) { ?>
+				<?php if(! isset($_SESSION['login']) && $oldal['menun'][0] || isset($_SESSION['login']) && $oldal['menun'][1]) { ?>
+					<button<?= (($oldal == $keres) ? ' class="active"' : '') ?>>
+						<a href="<?= ($url == '/') ? '.' : $url ?>">
+						<?= $oldal['szoveg'] ?></a>
+					</button>
+				<?php } ?>
+			<?php } ?>
+        </nav>
         <div id="content">
             <?php include("./templates/pages/{$keres['fajl']}.tpl.php"); ?>
         </div>
