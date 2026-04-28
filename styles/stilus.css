@@ -22,11 +22,9 @@
     margin: 80px auto;
     padding: 40px;
     max-width: 80%;
-
     background: rgba(0, 0, 0, 0.35);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-
     border-radius: 20px;
     color: white;
 }
@@ -45,19 +43,6 @@ button:hover {
 button:active {
     transform: scale(0.95);
 }
-.nav {
-    max-width: 100%;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-}
-.nav button{
-    background: none;
-}
 button a {
     background: none;
     text-decoration: none;
@@ -69,4 +54,56 @@ button a {
 }
 button a:hover {
     background: #5a5a5a;
+}
+footer{
+    color: white;
+    width: 100%; 
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+}
+.top-bar-container {
+    color: white;
+    max-width: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 10px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+.nav button {
+    background: transparent;
+    border: none;
+    padding: 10px 15px;
+}
+.nav button a {
+    color: white;
+    text-decoration: none;
 }
