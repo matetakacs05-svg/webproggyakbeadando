@@ -7,52 +7,57 @@
     <title>CRUD</title>
 </head>
 <body>
-<button onclick="document.location='crudAdd'">Add</button>
-<table>
-    <tr>
-        <th>Az</th>
-        <th>N√©v</th>
-        <th>Nem</th>
-        <th>Sz√ºlet√©si d√°tum</th>
-        <th>Nemzet</th>
-    </tr>
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="../bgv.mp4" type="video/mp4" />
+    </video>
+    <div class="contentcrud">
+        <button onclick="document.location='crudAdd'">Hozz·ad·s</button>
+        <table>
+            <tr>
+                <th>Az</th>
+                <th>N√©v</th>
+                <th>Nem</th>
+                <th>Sz√ºlet√©si d√°tum</th>
+                <th>Nemzet</th>
+                <th>M≈±veletek</th>
+            </tr>
 
-<?php
-try {
-    $stmt = $conn->query("SELECT az, nev, nem, szuldat, nemzet FROM pilota");
+        <?php
+        try {
+            $stmt = $conn->query("SELECT az, nev, nem, szuldat, nemzet FROM pilota");
 
-    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    if ($rows) {
-    foreach ($rows as $row) { ?>
-        <tr>
-            <td><?= htmlspecialchars($row['az']) ?></td>
-            <td><?= htmlspecialchars($row['nev']) ?></td>
-            <td><?= htmlspecialchars($row['nem']) ?></td>
-            <td><?= htmlspecialchars($row['szuldat']) ?></td>
-            <td><?= htmlspecialchars($row['nemzet']) ?></td>
-            <td>
-                <form method="POST" action="/crudEdit">
-                    <input type="hidden" name="az" value="<?= $row['az'] ?>">
-                    <button type="submit">Edit</button>
-                </form>
-                <form method="POST" action="/crudDelete">
-                    <input type="hidden" name="az" value="<?= $row['az'] ?>">
-                    <button type="submit">Delete</button>
-                </form>
-            </td>
-        </tr>
-    <?php }
-    } else {
-        echo "<tr><td colspan='3'>Nincs adat</td></tr>";
-    }
+            if ($rows) {
+            foreach ($rows as $row) { ?>
+                <tr>
+                    <td><?= htmlspecialchars($row['az']) ?></td>
+                    <td><?= htmlspecialchars($row['nev']) ?></td>
+                    <td><?= htmlspecialchars($row['nem']) ?></td>
+                    <td><?= htmlspecialchars($row['szuldat']) ?></td>
+                    <td><?= htmlspecialchars($row['nemzet']) ?></td>
+                    <td>
+                        <form method="POST" action="/crudEdit">
+                            <input type="hidden" name="az" value="<?= $row['az'] ?>">
+                            <button type="submit">MÛdosit·s</button>
+                        </form>
+                        <form method="POST" action="/crudDelete">
+                            <input type="hidden" name="az" value="<?= $row['az'] ?>">
+                            <button type="submit">TˆrlÈs</button>
+                        </form>
+                    </td>
+                </tr>
+            <?php }
+            } else {
+                echo "<tr><td colspan='3'>Nincs adat</td></tr>";
+            }
 
-} catch (PDOException $e) {
-    echo "<tr><td colspan='3'>Hiba: " . $e->getMessage() . "</td></tr>";
-}
-?>
+        } catch (PDOException $e) {
+            echo "<tr><td colspan='3'>Hiba: " . $e->getMessage() . "</td></tr>";
+        }
+        ?>
 
-</table>
-
+        </table>
+</div>
 </body>
 </html>
