@@ -9,30 +9,30 @@
 	<?php if(file_exists('./styles/'.$keres['fajl'].'.css')) { ?><link rel="stylesheet" href="./styles/<?= $keres['fajl']?>.css" type="text/css"><?php } ?>
 </head>
 <body>
+<div class="top-bar-container">
 	<header>
-		<img src="./images/<?=$fejlec['kepforras']?>" alt="<?=$fejlec['kepalt']?>">
-		<h1><?= $fejlec['cim'] ?></h1>
+		<div class="logo-group">
+			<img width="70px" height="18px" class="logo" src="./images/<?=$fejlec['kepforras']?>" alt="<?=$fejlec['kepalt']?>">
+			<h1 class="title"><?= $fejlec['cim'] ?></h1>
+		</div>
 		<?php if (isset($fejlec['motto'])) { ?><h2><?= $fejlec['motto'] ?></h2><?php } ?>
-		<?php if(isset($_SESSION['login'])) { ?>Bejlentkezve: <strong><?= $_SESSION['csn']." ".$_SESSION['un']." (".$_SESSION['login'].")" ?></strong><?php } ?>
+		<div class="status-text">
+			<?php if(isset($_SESSION['login'])) { ?>Bejlentkezve: <strong><?= $_SESSION['csn']." ".$_SESSION['un']." (".$_SESSION['login'].")" ?></strong><?php } ?>
+		</div>
 	</header>
-    <div id="wrapper">
-        <aside id="nav">
-            <nav>
-                <ul>
-					<?php foreach ($oldalak as $url => $oldal) { ?>
-						<?php if(! isset($_SESSION['login']) && $oldal['menun'][0] || isset($_SESSION['login']) && $oldal['menun'][1]) { ?>
-							<li<?= (($oldal == $keres) ? ' class="active"' : '') ?>>
-							<a href="<?= ($url == '/') ? '.' : $url ?>">
-							<?= $oldal['szoveg'] ?></a>
-							</li>
-						<?php } ?>
-					<?php } ?>
-                </ul>
-            </nav>
-        </aside>
-        <div id="content">
-            <?php include("./templates/pages/{$keres['fajl']}.tpl.php"); ?>
-        </div>
+    <nav class="nav">
+		<?php foreach ($oldalak as $url => $oldal) { ?>
+			<?php if(! isset($_SESSION['login']) && $oldal['menun'][0] || isset($_SESSION['login']) && $oldal['menun'][1]) { ?>
+				<button<?= (($oldal == $keres) ? ' class="active"' : '') ?>>
+					<a href="<?= ($url == '/') ? '.' : $url ?>">
+					<?= $oldal['szoveg'] ?></a>
+				</button>
+			<?php } ?>
+		<?php } ?>
+    </nav>
+</div>
+    <div id="content">
+        <?php include("./templates/pages/{$keres['fajl']}.tpl.php"); ?>
     </div>
     <footer>
         <?php if(isset($lablec['copyright'])) { ?>&copy;&nbsp;<?= $lablec['copyright'] ?> <?php } ?>

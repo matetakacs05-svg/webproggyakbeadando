@@ -1,18 +1,18 @@
 <?php
 $ablakcim = array(
-    'cim' => 'Mini honlap Kft.',
+    'cim' => 'Forma 1',
 );
 
 $fejlec = array(
     'kepforras' => 'logo.png',
     'kepalt' => 'logo',
-	'cim' => 'Mini honlap',
+	'cim' => 'Forma 1',
 	'motto' => ''
 );
 
 $lablec = array(
     'copyright' => 'Copyright '.date("Y").'.',
-    'ceg' => 'Mini honlap Kft.'
+    'ceg' => 'Készitette: Eötvös Levente (BXIMLQ)  -  Takács Máté (GV9NMD)'
 );
 
 $oldalak = array(
@@ -21,7 +21,6 @@ $oldalak = array(
     'gallery' => array('fajl' => 'gallery', 'szoveg' => 'Galéria', 'menun' => array(1,1)),
     'uzenetek'=> array('fajl' => 'uzenetek', 'szoveg' => 'Üzenetek', 'menun' => array(0,1)),
     'crudList'=> array('fajl' => 'crudList', 'szoveg' => 'CRUD', 'menun' => array(1,1)),
-    'tablazat' => array('fajl' => 'tablazat', 'szoveg' => 'Táblázat', 'menun' => array(1,1)),
     'belepes' => array('fajl' => 'belepes', 'szoveg' => 'Belépés', 'menun' => array(1,0)),
     'kilepes' => array('fajl' => 'kilepes', 'szoveg' => 'Kilépés', 'menun' => array(0,1)),
     'belep' => array('fajl' => 'belep', 'szoveg' => '', 'menun' => array(0,0)),
