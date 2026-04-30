@@ -24,11 +24,24 @@ if (isset($_POST['cancel'])) {
     exit;
 }
 ?>
-
-<h3>Biztosan törlöd ezt a rekordot?</h3>
-
-<form method="POST">
-    <input type="hidden" name="az" value="<?= $az ?>">
-    <button type="submit" name="confirm">Igen, törlés</button>
-    <button type="submit" name="cancel">Mégse</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="../bgv.mp4" type="video/mp4" />
+    </video>
+    <div class="contentcrud">
+        <form method="POST">
+            <input type="hidden" name="az" value="<?= $az ?>">
+            <button type="submit" name="confirm">Igen, törlés</button>
+            <button type="submit" name="cancel">Mégse</button>
+        </form>
+	<h3>Biztosan törlöd ezt a rekordot?</h3>
+    </div>
+</body>
+</html>
