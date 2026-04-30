@@ -1,5 +1,8 @@
 <?php
-	include('./includes/config.inc.php');
+
+	session_start();
+	require_once('./includes/config.inc.php'); // eredetileg include('./includes/config.inc.php');
+
 	$oldal = $_SERVER['QUERY_STRING'];
 	if ($oldal!="") {
 		if (isset($oldalak[$oldal]) && file_exists("./templates/pages/{$oldalak[$oldal]['fajl']}.tpl.php")) {

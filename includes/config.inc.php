@@ -12,7 +12,7 @@ $fejlec = array(
 
 $lablec = array(
     'copyright' => 'Copyright '.date("Y").'.',
-    'ceg' => 'Készitette: Eötvös Levente (BXIMLQ)  -  Takács Máté (GV9NMD)'
+    'ceg' => 'Készitette: Ötvös Levente (BXIMLQ)  -  Takács Máté (GV9NMD)'
 );
 
 $oldalak = array(
