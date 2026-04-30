@@ -36,25 +36,39 @@ if (!$adat) {
     exit;
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="../bgv.mp4" type="video/mp4" />
+    </video>
+    <div class="contentcrud">
+        <form method="POST">
+            <input type="hidden" name="az" value="<?= $az ?>">
 
-<form method="POST">
-    <input type="hidden" name="az" value="<?= $az ?>">
+            <label>Név:</label>
+            <input type="text" name="nev" value="<?= htmlspecialchars($adat['nev']) ?>" required><br>
 
-    <label>Név:</label>
-    <input type="text" name="nev" value="<?= htmlspecialchars($adat['nev']) ?>" required><br>
+            <label>Nem:</label>
+            <select name="nem" required>
+                <option value="N" <?= $adat['nem'] == 'N' ? 'selected' : '' ?>>Nő</option>
+                <option value="F" <?= $adat['nem'] == 'F' ? 'selected' : '' ?>>Férfi</option>
+            </select><br>
 
-    <label>Nem:</label>
-    <select name="nem" required>
-        <option value="N" <?= $adat['nem'] == 'N' ? 'selected' : '' ?>>Nő</option>
-        <option value="F" <?= $adat['nem'] == 'F' ? 'selected' : '' ?>>Férfi</option>
-    </select><br>
+            <label>Születési dátum:</label>
+            <input type="date" name="szuldat" value="<?= $adat['szuldat'] ?>" required><br>
 
-    <label>Születési dátum:</label>
-    <input type="date" name="szuldat" value="<?= $adat['szuldat'] ?>" required><br>
+            <label>Nemzet:</label>
+            <input type="text" name="nemzet" value="<?= htmlspecialchars($adat['nemzet']) ?>" required><br>
 
-    <label>Nemzet:</label>
-    <input type="text" name="nemzet" value="<?= htmlspecialchars($adat['nemzet']) ?>" required><br>
-
-    <button type="submit">Mentés</button>
-    <button type="button" onclick="window.location='crudList'">Mégse</button>
-</form>
+            <button type="submit">Mentés</button>
+            <button type="button" onclick="window.location='crudList'">Mégse</button>
+        </form>
+    </div>
+</body>
+</html>
