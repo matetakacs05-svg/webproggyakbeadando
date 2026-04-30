@@ -1,10 +1,32 @@
-<h1>Foma 1</h1>
-<p> Az 1950 és 2006 közötti időszak a Formula–1 világbajnokság történetének legfontosabb fejlődési korszaka, amely során a sportág a veszélyes, kísérleti jellegű versenyzésből globális, technológiailag fejlett bajnoksággá vált. </p>
-<video width="540" height="310"> <source src="images/webvideo.mp4" type="video/mp4"> </video>
-<p>Az 1950-es és 60-as évek a kezdeti időszakot jelentették, amikor még minimális biztonság és egyszerű technika jellemezte az autókat. A 70-es évektől fokozatosan nőtt az aerodinamika szerepe, megjelentek a szponzorok, és a Forma–1 üzleti szempontból is jelentőssé vált. A 80-as években a turbómotorok és az elektronikai fejlesztések új szintre emelték a teljesítményt, miközben egyre nagyobb hangsúlyt kapott a biztonság.</p>
-<p>A 90-es és 2000-es évek eleje már a modern Forma–1 kialakulásának időszaka volt, ahol olyan meghatározó versenyzők domináltak, mint Ayrton Senna vagy Michael Schumacher. Az autók rendkívül fejlett aerodinamikai megoldásokat, fejlett elektronikát és kifinomult stratégiákat alkalmaztak.</p>
-<p>Ez az időszak a biztonság terén is óriási előrelépést hozott: a súlyos balesetek hatására szigorú szabályokat vezettek be, amelyek jelentősen csökkentették a halálos kimenetelű incidensek számát.</p>
-<iframe width="420" height="315" loop=1 src="https://www.youtube.com/watch?v=PCFv0KZ2VpU"> </iframe>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2726.3375296155727!2d19.66695091525771!3d46.89607994478184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4743da7a6c479e1d%3A0xc8292b3f6dc69e7f!2sPallasz+Ath%C3%A9n%C3%A9+Egyetem+GAMF+Kar!5e0!3m2!1shu!2shu!4v1475753185783" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-<br>
-<a target="_blank" href="https://www.google.hu/maps/place/Pallasz+Ath%C3%A9n%C3%A9+Egyetem+GAMF+Kar/@46.8960799,19.6669509,17z/data=!3m1!4b1!4m5!3m4!1s0x4743da7a6c479e1d:0xc8292b3f6dc69e7f!8m2!3d46.8960763!4d19.6691396?hl=hu">Nagyobb térkép</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <video autoplay muted loop playsinline id="bg-video">
+    <source src="../bgv.mp4" type="video/mp4" />
+    </video>
+    <div class="contentcim">
+        <h1>Foma 1</h1>
+        <div class="text-section">
+            <p> Az 1950 és 2006 közötti időszak a Formula–1 világbajnokság történetének legfontosabb fejlődési korszaka, amely során a sportág a veszélyes, kísérleti jellegű versenyzésből globális, technológiailag fejlett bajnoksággá vált. </p>
+            <p>Az 1950-es és 60-as évek a kezdeti időszakot jelentették, amikor még minimális biztonság és egyszerű technika jellemezte az autókat. A 70-es évektől fokozatosan nőtt az aerodinamika szerepe, megjelentek a szponzorok, és a Forma–1 üzleti szempontból is jelentőssé vált. A 80-as években a turbómotorok és az elektronikai fejlesztések új szintre emelték a teljesítményt, miközben egyre nagyobb hangsúlyt kapott a biztonság.</p>
+            <p>A 90-es és 2000-es évek eleje már a modern Forma–1 kialakulásának időszaka volt, ahol olyan meghatározó versenyzők domináltak, mint Ayrton Senna vagy Michael Schumacher. Az autók rendkívül fejlett aerodinamikai megoldásokat, fejlett elektronikát és kifinomult stratégiákat alkalmaztak.</p>
+            <p>Ez az időszak a biztonság terén is óriási előrelépést hozott: a súlyos balesetek hatására szigorú szabályokat vezettek be, amelyek jelentősen csökkentették a halálos kimenetelű incidensek számát.</p>
+        </div>
+
+        <div class="media-section">
+            <video autoplay muted playsinline controls loop> <source src="images/webvideo.mp4" type="video/mp4"> </video>
+            <iframe height="250" src="https://www.youtube.com/embed/s8WHY3Gusx0"></iframe>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2726.3375296155727!2d19.66695091525771!3d46.89607994478184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4743da7a6c479e1d%3A0xc8292b3f6dc69e7f!2sPallasz+Ath%C3%A9n%C3%A9+Egyetem+GAMF+Kar!5e0!3m2!1shu!2shu!4v1475753185783" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <br>
+                <a target="_blank" href="https://www.google.hu/maps/place/Pallasz+Ath%C3%A9n%C3%A9+Egyetem+GAMF+Kar/@46.8960799,19.6669509,17z/data=!3m1!4b1!4m5!3m4!1s0x4743da7a6c479e1d:0xc8292b3f6dc69e7f!8m2!3d46.8960763!4d19.6691396?hl=hu">Nagyobb térkép</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
