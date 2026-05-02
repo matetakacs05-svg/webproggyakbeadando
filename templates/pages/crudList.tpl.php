@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="contentcrud">
-        <button onclick="document.location='crudAdd'">Hozz�ad�s</button>
+        <button onclick="document.location='crudAdd'">Hozzáadás</button>
         <table>
             <tr>
                 <th>Az</th>
@@ -36,11 +36,11 @@
                     <td>
                         <form method="POST" action="/crudEdit">
                             <input type="hidden" name="az" value="<?= $row['az'] ?>">
-                            <button type="submit">M�dosit�s</button>
+                            <button type="submit">Módosítás</button>
                         </form>
                         <form method="POST" action="/crudDelete">
                             <input type="hidden" name="az" value="<?= $row['az'] ?>">
-                            <button type="submit">T�rl�s</button>
+                            <button type="submit">Törlés</button>
                         </form>
                     </td>
                 </tr>
