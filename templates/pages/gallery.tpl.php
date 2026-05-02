@@ -9,9 +9,6 @@
 <title>Kép feltöltés</title>
 </head>
 <body>
-<video autoplay muted loop playsinline id="bg-video">
-    <source src="../bgv.mp4" type="video/mp4" />
-</video>
 <div class="contentgal">
     <h1>Kép feltöltés</h1>
     <?php if (isset($_SESSION['login'])): ?>

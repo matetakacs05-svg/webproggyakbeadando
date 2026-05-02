@@ -7,9 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <video autoplay muted loop playsinline id="bg-video">
-        <source src="../bgv.mp4" type="video/mp4" />
-    </video>
     <div class="contentkap">
         <h1>Üzenet Küldése</h1>
         <form method="POST" class="uzenetForm">

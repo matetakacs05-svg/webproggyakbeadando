@@ -7,9 +7,6 @@
     <title>CRUD</title>
 </head>
 <body>
-    <video autoplay muted loop playsinline id="bg-video">
-        <source src="../bgv.mp4" type="video/mp4" />
-    </video>
     <div class="contentcrud">
         <button onclick="document.location='crudAdd'">Hozzáadás</button>
         <table>

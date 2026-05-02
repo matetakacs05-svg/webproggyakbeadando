@@ -9,6 +9,9 @@
 	<?php if(file_exists('./styles/'.$keres['fajl'].'.css')) { ?><link rel="stylesheet" href="./styles/<?= $keres['fajl']?>.css" type="text/css"><?php } ?>
 </head>
 <body>
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="../bgv.mp4" type="video/mp4" />
+    </video>
 <div class="top-bar-container">
 	<header>
 		<div class="logo-group">

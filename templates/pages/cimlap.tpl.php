@@ -6,9 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <video autoplay muted loop playsinline id="bg-video">
-    <source src="../bgv.mp4" type="video/mp4" />
-    </video>
     <div class="contentcim">
         <h1>Foma 1</h1>
         <div class="text-section">
